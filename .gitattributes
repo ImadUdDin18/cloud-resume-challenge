@@ -1,0 +1,2 @@
+# Store text files with LF line endings across Windows, Linux, and CI environments.
+* text=auto eol=lf

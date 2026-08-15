@@ -1,0 +1,27 @@
+# Terraform: state can contain resource metadata and sensitive values.
+*.tfstate
+*.tfstate.*
+*.tfplan
+.terraform/
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+crash.*.log
+
+# Credentials and local environment settings.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Operating-system and editor files.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies and build output.
+node_modules/
+dist/
+coverage/
