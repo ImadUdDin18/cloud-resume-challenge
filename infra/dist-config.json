@@ -1,0 +1,28 @@
+{
+  "CallerReference": "imad-cloud-resume-2026-08-15",
+  "Comment": "Cloud Resume Challenge - CloudFront",
+  "DefaultRootObject": "index.html",
+  "Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "S3-imad-cloud-resume",
+        "DomainName": "imad-cloud-resume-218908192593-ap-south-1.s3.ap-south-1.amazonaws.com",
+        "OriginAccessControlId": "EHLU4M07KR1D6",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3-imad-cloud-resume",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    },
+    "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6"
+  }
+}

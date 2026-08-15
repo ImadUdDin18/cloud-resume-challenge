@@ -22,3 +22,10 @@ Open `http://localhost:8001/` in a browser.
 - Amazon S3 and CloudFront
 - Terraform
 - GitHub Actions
+
+## Phase 5 - CloudFront (complete)
+
+- CloudFront distribution: dab49w3pv45ix.cloudfront.net
+- Origin Access Control (OAC) securing S3 origin
+- S3 bucket fully private, direct access blocked (403)
+- HTTPS enforced via redirect-to-https
