@@ -29,3 +29,10 @@ Open `http://localhost:8001/` in a browser.
 - Origin Access Control (OAC) securing S3 origin
 - S3 bucket fully private, direct access blocked (403)
 - HTTPS enforced via redirect-to-https
+
+## Phase 4 - S3 Deployment (complete)
+
+- Bucket: imad-cloud-resume-218908192593-ap-south-1 (ap-south-1)
+- Fully private, Block Public Access enabled on all 4 settings
+- Site files (index.html, css/, js/) uploaded via aws s3 sync
+- No public read access - content only served via CloudFront (Phase 5)
