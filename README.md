@@ -1,19 +1,29 @@
 # Cloud Resume Challenge
 Personal Cloud and DevOps portfolio for **Imad Ud Din**.
 ## Current stage
-The responsive static website is complete and tested locally. Infrastructure is
-now fully managed with Terraform. CI/CD will be added in the next phase.
+Project complete. Static website deployed on AWS with S3, CloudFront, and HTTPS.
+Infrastructure fully managed with Terraform. Deployments are automated with
+GitHub Actions CI/CD.
 ## Run locally
 ```powershell
 node .\scripts\serve-local.mjs
 ```
 Open `http://localhost:8001/` in a browser.
-## Planned stack
+## Live site
+https://dab49w3pv45ix.cloudfront.net
+## Stack
 - HTML, CSS, JavaScript
 - Git and GitHub
 - Amazon S3 and CloudFront
 - Terraform
 - GitHub Actions
+## Phase 7 - CI/CD (complete)
+- GitHub Actions workflow triggers on push to `main` when files under `src/` change
+- Workflow syncs `src/` to S3 with `aws s3 sync --delete`
+- Workflow invalidates CloudFront cache so changes go live immediately
+- AWS access scoped to a dedicated IAM user with least-privilege permissions
+  (S3 bucket actions + CloudFront invalidation only), credentials stored as
+  encrypted GitHub Secrets
 ## Phase 6 - Terraform (complete)
 - Existing S3 bucket, bucket policy, public access block, CloudFront distribution,
   and Origin Access Control all imported into Terraform state
