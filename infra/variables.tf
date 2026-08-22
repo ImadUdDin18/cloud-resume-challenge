@@ -15,3 +15,9 @@ variable "aws_account_id" {
   type        = string
   default     = "218908192593"
 }
+
+variable "alert_email" {
+  description = "Email address to receive CloudWatch alarm notifications"
+  type        = string
+  default     = "iamimaduddin20@gmail.com"
+}

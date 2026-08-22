@@ -3,7 +3,8 @@ Personal Cloud and DevOps portfolio for **Imad Ud Din**.
 ## Current stage
 Project complete. Static website deployed on AWS with S3, CloudFront, and HTTPS.
 Infrastructure fully managed with Terraform. Deployments are automated with
-GitHub Actions CI/CD.
+GitHub Actions CI/CD. Monitoring and logging in place for visibility into
+traffic and errors.
 ## Run locally
 ```powershell
 node .\scripts\serve-local.mjs
@@ -17,6 +18,17 @@ https://dab49w3pv45ix.cloudfront.net
 - Amazon S3 and CloudFront
 - Terraform
 - GitHub Actions
+- AWS CloudWatch, SNS
+## Phase 8 - Monitoring & Logging (complete)
+- CloudFront access logs delivered to a dedicated, private S3 bucket with a
+  90-day lifecycle policy to auto-expire old logs
+- CloudWatch alarm on CloudFront 5xx error rate (>5% over 5 minutes), covering
+  both alarm and recovery (OK) states
+- SNS email notifications wired to the alarm; CloudFront alarms and their SNS
+  targets must both live in us-east-1, so a dedicated us-east-1 topic was
+  provisioned specifically for this
+- All of the above defined and provisioned through Terraform, alongside the
+  rest of the infrastructure
 ## Phase 7 - CI/CD (complete)
 - GitHub Actions workflow triggers on push to `main` when files under `src/` change
 - Workflow syncs `src/` to S3 with `aws s3 sync --delete`

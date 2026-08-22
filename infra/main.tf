@@ -78,6 +78,12 @@ resource "aws_cloudfront_distribution" "site" {
     }
   }
 
+  logging_config {
+    bucket          = aws_s3_bucket.logs.bucket_regional_domain_name
+    include_cookies = false
+    prefix          = "cloudfront/"
+  }
+
   viewer_certificate {
     cloudfront_default_certificate = true
   }
